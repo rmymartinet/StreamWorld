@@ -1,3 +1,4 @@
+import { ModeToggle } from "@/components/ModeToggle";
 import { ThemeProvider } from "@/components/theme-provider";
 import { ClerkProvider } from "@clerk/nextjs";
 import { dark } from "@clerk/themes";
@@ -24,9 +25,10 @@ export default function RootLayout({
         <body className={inter.className}>
           <ThemeProvider
             attribute="class"
-            forcedTheme="dark"
+            // forcedTheme="dark"
             storageKey="streamworld-theme"
           >
+            <ModeToggle />
             {children}
           </ThemeProvider>
         </body>

@@ -2,11 +2,15 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Application de backgroud
+* Si je ne veux pas avoir un changmeent de background j'utilise la regle @pply bg-background
+
+*/
 html,
 body,
 :root {
   height: 100%;
-  @apply bg-neutral-900/80;
+  /* @apply bg-neutral-900/80; */
 }
 
 .hidden-scrollbar {
