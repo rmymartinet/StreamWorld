@@ -23,11 +23,7 @@ export default function RootLayout({
     <ClerkProvider appearance={{ baseTheme: dark }}>
       <html lang="en">
         <body className={inter.className}>
-          <ThemeProvider
-            attribute="class"
-            // forcedTheme="dark"
-            storageKey="streamworld-theme"
-          >
+          <ThemeProvider attribute="class" storageKey="streamworld-theme">
             <ModeToggle />
             {children}
           </ThemeProvider>

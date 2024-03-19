@@ -19,6 +19,7 @@ export const Logo = () => {
           className="w-24 h-24 rounded-full"
         />
       </div>
+
       <div className={cn("flex flex-col items-center", font.className)}>
         <p className="text-xl font-semibold">StreamWorld</p>
         <p className="text-sm text-muted-foreground">Let&apos;s play</p>
