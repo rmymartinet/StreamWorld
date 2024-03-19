@@ -4,10 +4,12 @@
 // Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
 // Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
 
+//coté client ? //fournisseur de prisma-client-js
 generator client {
   provider = "prisma-client-js"
 }
 
+//q: coté serveur ? 
 datasource db {
   provider = "mongodb"
   url      = env("DATABASE_URL")
@@ -17,7 +19,7 @@ model User {
   id             String  @id @default(auto()) @map("_id") @db.ObjectId
   username       String  @unique
   imageUrl       String  @db.String
-  extrenalUserId String  @unique
+  externalUserId String  @unique
   bio            String? @db.String
 
   createdAt DateTime @default(now())
