@@ -30,6 +30,8 @@ export async function POST(req: Request) {
   // Create a new Svix instance with your secret.
   const wh = new Webhook(WEBHOOK_SECRET);
 
+  //evt sert à quoi ici ?
+  //r: evt est un objet qui contient les informations de l'evenement qui a été déclenché par le webhook
   let evt: WebhookEvent;
 
   // Verify the payload with the headers

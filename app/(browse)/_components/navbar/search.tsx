@@ -9,7 +9,6 @@ import { useState } from "react";
 
 export const Search = () => {
   const router = useRouter();
-
   const [value, setValue] = useState("");
 
   const onSubmit = (e: React.FormEvent<HTMLFormElement>) => {
@@ -55,8 +54,9 @@ export const Search = () => {
         size="sm"
         variant="secondary"
         className="rounded-l-none"
-      />
-      <SearchIcon className="h-5 w-5 text-muted-foreground" />
+      >
+        <SearchIcon className="h-5 w-5 text-muted-foreground" />
+      </Button>
     </form>
   );
 };
