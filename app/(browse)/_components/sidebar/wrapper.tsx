@@ -3,6 +3,7 @@
 import { cn } from "@/lib/utils";
 import { useSidebar } from "@/store/use-sidebar";
 import { useEffect, useState } from "react";
+import { FollowingSkeleton } from "./following";
 import { RecommendedSkeleton } from "./recommended";
 import { ToggleSkeleton } from "./toggle";
 
@@ -26,6 +27,7 @@ export const Wrapper = ({ children }: WrapperProps) => {
     return (
       <aside className="fixed top-20 space-y-4 left-0 flex flex-col w-[70px] lg:w-60 h-full bg-background border-r border-[#2D2E35] z-50">
         <ToggleSkeleton />
+        <FollowingSkeleton />
         <RecommendedSkeleton />
       </aside>
     );
