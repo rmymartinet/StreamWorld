@@ -1,3 +1,5 @@
+"use server";
+
 import { blockUser, unblockUser } from "@/lib/block-service";
 import { revalidatePath } from "next/cache";
 
@@ -8,6 +10,7 @@ export const onBlock = async (id: string) => {
   TODO: Allow ability to kick a user from a livestream when blocking them
   
   */
+
   const blockedUser = await blockUser(id);
 
   revalidatePath("/");
@@ -16,7 +19,7 @@ export const onBlock = async (id: string) => {
     revalidatePath(`/${blockedUser.blocked.username}`);
   }
 
-  return blockUser;
+  return blockedUser;
 };
 
 export const onUnBlock = async (id: string) => {
@@ -28,5 +31,5 @@ export const onUnBlock = async (id: string) => {
     revalidatePath(`/${unblockedUser.blocked.username}`);
   }
 
-  return unblockUser;
+  return unblockedUser;
 };

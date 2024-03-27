@@ -43,7 +43,7 @@ export const isBlockedByUser = async (id: string) => {
 };
 
 export const blockUser = async (id: string) => {
-  const self = getSelf();
+  const self = await getSelf();
 
   if (self.id === id) {
     throw new Error("You can't block yourself");
@@ -86,7 +86,7 @@ export const blockUser = async (id: string) => {
 };
 
 export const unblockUser = async (id: string) => {
-  const self = getSelf();
+  const self = await getSelf();
 
   const otherUser = await db.user.findUnique({
     where: {
