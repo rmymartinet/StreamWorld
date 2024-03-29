@@ -23,7 +23,11 @@ export default function RootLayout({
     <ClerkProvider appearance={{ baseTheme: dark }}>
       <html lang="en">
         <body className={inter.className}>
-          <ThemeProvider attribute="class" storageKey="streamworld-theme">
+          <ThemeProvider
+            attribute="class"
+            forcedTheme="dark"
+            storageKey="streamworld-theme"
+          >
             {/* <ModeToggle /> */}
             <Toaster theme="light" position="bottom-center" />
             {children}
