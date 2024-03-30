@@ -18,7 +18,7 @@ export const Actions = async () => {
         </SignInButton>
       )}
       {!!user && (
-        <div className="flex items-center gap-x-4 border">
+        <div className="flex items-center gap-x-4">
           <Button
             size="sm"
             variant="ghost"

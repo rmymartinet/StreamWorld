@@ -20,7 +20,6 @@ export const Following = ({ data }: FollowingProps) => {
           <p className="text-sm text-muted-foreground">Following</p>
         </div>
       )}
-
       <ul>
         {data.map((follow) => (
           <UserItem

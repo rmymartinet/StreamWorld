@@ -12,6 +12,7 @@ export const Recommended = ({ data }: RecommendedProps) => {
   const { collapsed } = useSidebar((state) => state);
 
   const showLabel = !collapsed && data.length > 0;
+
   return (
     <div>
       {showLabel && (
@@ -25,7 +26,7 @@ export const Recommended = ({ data }: RecommendedProps) => {
             key={user.id}
             username={user.username}
             imageUrl={user.imageUrl}
-            isLive={true}
+            isLive={false}
           />
         ))}
       </ul>

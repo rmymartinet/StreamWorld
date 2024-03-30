@@ -1,9 +1,10 @@
-import { Button } from "@/components/ui/button";
 import { getSelf } from "@/lib/auth-service";
 import { getStreamByUserId } from "@/lib/stream-service";
+import { ConnectModal } from "./_components/connect-modal";
+import { KeyCard } from "./_components/key-card";
 import { UrlCard } from "./_components/url-card";
 
-const Key = async () => {
+const Keys = async () => {
   const self = await getSelf();
   const stream = await getStreamByUserId(self.id);
 
@@ -15,13 +16,14 @@ const Key = async () => {
     <div className="p-6">
       <div className="flex items-center justify-between mb-4">
         <h1 className="text-2x font-bold">Keys & URLs</h1>
-        <Button variant="primary">Generate</Button>
+        <ConnectModal />
       </div>
       <div className="space-y-4">
         <UrlCard value={stream.serverUrl} />
+        <KeyCard value={stream.streamKey} />
       </div>
     </div>
   );
 };
 
-export default Key;
+export default Keys;

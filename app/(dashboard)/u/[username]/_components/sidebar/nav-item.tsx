@@ -18,9 +18,7 @@ export const NavItem = ({
   icon: Icon,
   isActive,
 }: NavItemProps) => {
-  const { collapsed, onExpand, onCollapse } = useCreatorSidebar(
-    (state) => state
-  );
+  const { collapsed } = useCreatorSidebar((state) => state);
   return (
     <Button
       asChild
