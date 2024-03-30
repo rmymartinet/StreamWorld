@@ -48,14 +48,24 @@ export const getRecommanded = async () => {
           },
         ],
       },
+
+      //Protect sensitive data from being exposed ("use client component recommended")
       include: {
-        stream: true,
+        stream: {
+          select: {
+            isLive: true,
+          },
+        },
       },
     });
   } else {
     users = await db.user.findMany({
       include: {
-        stream: true,
+        stream: {
+          select: {
+            isLive: true,
+          },
+        },
       },
       orderBy: {
         createdAt: "desc",

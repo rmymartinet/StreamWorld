@@ -1,13 +1,14 @@
 "use client";
 
 import { useSidebar } from "@/store/use-sidebar";
-import { Follow, Stream, User } from "@prisma/client";
+import { Follow, User } from "@prisma/client";
 import { UserItem, UserItemSkeleton } from "./user-item";
 
+//Protect the sensitive data from being exposed ("use client") and not passing the entire user object
 interface FollowingProps {
   data: (Follow & {
     following: User & {
-      stream: Stream | null;
+      stream: { isLive: boolean } | null;
     };
   })[];
 }
