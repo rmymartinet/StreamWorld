@@ -20,6 +20,8 @@ const RoomService = new RoomServiceClient(
   process.env.LIVEKIT_API_SECRET!
 );
 
+
+
 const ingressClient = new IngressClient(process.env.LIVEKIT_API_URL!);
 
 export const resetIngresses = async (hostIdentity: string) => {

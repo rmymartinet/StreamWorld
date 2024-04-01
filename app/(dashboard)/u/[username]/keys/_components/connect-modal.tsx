@@ -1,6 +1,7 @@
 "use client";
 
 import { createIngress } from "@/actions/ingress";
+import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
 import { Button } from "@/components/ui/button";
 import {
   Dialog,
@@ -10,20 +11,20 @@ import {
   DialogTitle,
   DialogTrigger,
 } from "@/components/ui/dialog";
-import { ElementRef, useRef, useState, useTransition } from "react";
-
 import {
   Select,
   SelectContent,
   SelectItem,
   SelectTrigger,
+  SelectValue,
 } from "@/components/ui/select";
-
-import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
-import { SelectValue } from "@radix-ui/react-select";
 import { IngressInput } from "livekit-server-sdk";
 import { AlertTriangle } from "lucide-react";
+import { ElementRef, useRef, useState, useTransition } from "react";
 import { toast } from "sonner";
+
+/** Video and audio stream input types
+ */
 
 const RTMP = String(IngressInput.RTMP_INPUT);
 const WHIP = String(IngressInput.WHIP_INPUT);
@@ -32,7 +33,9 @@ type IngressType = typeof RTMP | typeof WHIP;
 
 export const ConnectModal = () => {
   const closeRef = useRef<ElementRef<"button">>(null);
+
   const [ingressType, setIngressType] = useState<IngressType>(RTMP);
+
   const [isPending, startTransition] = useTransition();
 
   const onSubmit = () => {

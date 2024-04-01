@@ -5,6 +5,7 @@ import { Follow, User } from "@prisma/client";
 import { UserItem, UserItemSkeleton } from "./user-item";
 
 //Protect the sensitive data from being exposed ("use client") and not passing the entire user object
+
 interface FollowingProps {
   data: (Follow & {
     following: User & {
