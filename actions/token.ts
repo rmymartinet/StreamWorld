@@ -35,12 +35,10 @@ export const createViewerToken = async (hostIdentity: string) => {
   }
 
   const isHost = self.id === host.id;
-  const uniqueId = v4(); // Génère un identifiant unique
 
   const tokenOptions: ExtendedAccessTokenOptions = {
-    identity: isHost ? `host-${self.id}-${uniqueId}` : `${self.id}`,
+    identity: isHost ? `host-${self.id}` : `${self.id}`,
     name: self.username,
-    uniqueId: uniqueId,
   };
 
   const token = new AccessToken(
