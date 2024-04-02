@@ -19,9 +19,14 @@ export const Thumbnail = ({
 }: ThumbnailProps) => {
   let content;
 
+  /**
+   *
+   * !TODO: Change bg-slate-400
+   */
+
   if (!src) {
     content = (
-      <div className="bg-background flex flex-col items-center justify-center gap-y-4 h-full w-full transition-transform group-hover:translate-x-2 group-hover:-translate-y-2 rounded-md">
+      <div className="bg-slate-400 flex flex-col items-center justify-center gap-y-4 h-full w-full transition-transform group-hover:translate-x-2 group-hover:-translate-y-2 rounded-md">
         <UserAvatar
           size="lg"
           showBadge
