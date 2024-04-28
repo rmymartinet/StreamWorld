@@ -65,7 +65,7 @@ model Stream {
   id           String  @id @default(uuid()) @map("_id")
   name         String  @db.String
   thumbnailUrl String? @db.String
-  ingressId    String? @unique @db.String
+  ingressId    String? @unique @default(uuid()) @db.String
   serverUrl    String? @db.String
   streamKey    String? @db.String
 
